@@ -8,7 +8,7 @@ from api.models import Note
 
 class NoteListCreate(generics.ListCreateAPIView):
     serializer_class = NoteSerializer
-    permission_classes = ["IsAuthenticated"]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         user = self.request.user
@@ -22,7 +22,7 @@ class NoteListCreate(generics.ListCreateAPIView):
 
 class NoteDelete(generics.DestroyAPIView):
     serializer_class = NoteSerializer
-    permission_classes = ["IsAuthenticated"]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         user = self.request.user
